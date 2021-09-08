@@ -1,9 +1,10 @@
-// run: /usr/local/opt/qt5/bin/qmltestrunner -input tst_Main.qml -import ./mocks
+// run: /usr/local/opt/qt5/bin/qmltestrunner -input tst_YellowSquare.qml
 
 import QtQuick 2.14
 import QtTest 1.2
 
 import "../qml"
+import "./mocks"
 
 TestCase {
     id: testYellowSquare
@@ -11,9 +12,13 @@ TestCase {
     when: windowShown
     width: 300; height: 300
     
+    property Log mockLog: MockLog {}
+
     Component {
         id: component
-        Main {}
+        YellowSquare {
+            log: mockLog
+        }
     }
 
     function test_click_yellow() {
@@ -23,6 +28,12 @@ TestCase {
             mouseClick(obj)
             wait(500)
         }
+    }
 
+    function test_log_is_called() {
+        var obj = createTemporaryObject(component, parent)
+        waitForRendering(obj)
+        mouseClick(obj)
+        compare(mockLog.logCalled, true)
     }
 }
