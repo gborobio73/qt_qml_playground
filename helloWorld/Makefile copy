@@ -1,0 +1,2 @@
+all: 
+		gcc -lstdc++  ./helloworld.cpp -o ./build/helloworld

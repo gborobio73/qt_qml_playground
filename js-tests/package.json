@@ -1,0 +1,17 @@
+{
+  "name": "js-tests",
+  "version": "1.0.0",
+  "description": "JS tests",
+  "scripts": {
+    "test": "jest --config=jest.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "babel-jest": "^27.0.6",
+    "jest": "^27.0.6"
+  }
+}
