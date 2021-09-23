@@ -15,11 +15,11 @@ Item {
         id: mediaScreen
     }
 
-    FlightClosedScreen {
-        id: flightClosedScreen
+    DoorClosedScreen {
+        id: doorClosedScreen
     } 
 
-    Pacio {
+    ExternalEvents {
         id: pacio
     }
 

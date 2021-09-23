@@ -4,7 +4,7 @@ Item {
     property bool homeScreenVisible: true
     property bool homeScreenEnabled: false
     property bool mediaScreenVisible: false
-    property bool flightClosedVisible: false
+    property bool doorClosedScreenVisible: false
 
     Connections {
         target: homeScreen
@@ -28,16 +28,16 @@ Item {
 
     Connections {
         target: pacio
-        function onFlightOpenned() {
+        function onDoorOpenned() {
             homeScreenVisible = true
             homeScreenEnabled = true
             mediaScreenVisible = false
-            flightClosedVisible = false
+            doorClosedScreenVisible = false
         }
-        function onFlightClosed() {
+        function onDoorClosed() {
             homeScreenVisible = false
             mediaScreenVisible = false
-            flightClosedVisible = true
+            doorClosedScreenVisible = true
         }
     }
 }
