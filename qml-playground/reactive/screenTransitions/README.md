@@ -4,7 +4,7 @@ Transitions are triggered by either button presses (e.g. go to media screen) or 
 `ScreenTransitions.qml` holds the "state" of the screens: what's visible and what is not.
 Screens use this component to show/hide themselves.
 
-`ScreenTransitions.qml` subscribes to all possible events: navigation requests and Pacio events and updates its state (state of the screens)
+`ScreenTransitions.qml` subscribes to all possible events: navigation requests from different screens and Pacio events, and it updates its state (state of the screens).
 
 `main.qml` is the starting point.
 
