@@ -21,6 +21,6 @@ Screens use this component to show/hide themselves.
     }
 ```
 
-`main.qml` is the starting screen is the `HomeScreen.qml`.
+`main.qml` is the starting point, and `HomeScreen.qml` is the screen shown on startup.
 
 Run by `QML2_IMPORT_PATH=. qmlscene main.qml`
