@@ -2,6 +2,7 @@ import QtQuick 2.14
 
 Item {
     property bool homeScreenVisible: true
+    property bool homeScreenEnabled: false
     property bool mediaScreenVisible: false
     property bool flightClosedVisible: false
 
@@ -27,6 +28,12 @@ Item {
 
     Connections {
         target: pacio
+        function onFlightOpenned() {
+            homeScreenVisible = true
+            homeScreenEnabled = true
+            mediaScreenVisible = false
+            flightClosedVisible = false
+        }
         function onFlightClosed() {
             homeScreenVisible = false
             mediaScreenVisible = false
