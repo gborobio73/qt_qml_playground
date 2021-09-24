@@ -20,9 +20,6 @@ Screen {
 
     Connections {
         target: navBar
-        function onHomeButtonPressed() {
-            homeNavigationRequested()
-        }
         function onPlayButtonPressed() {
             text.text = `Playing a movie`
         }
@@ -30,5 +27,9 @@ Screen {
             text.text = `Movie stopped`
         }
 
+    }
+
+    Component.onCompleted: {
+        navBar.onHomeButtonPressed.connect(homeNavigationRequested)
     }
 }

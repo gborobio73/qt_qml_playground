@@ -19,13 +19,8 @@ Screen {
         }
     }
 
-    Connections {
-        target: navBar
-        function onMediaButtonPressed() {
-            mediaNavigationRequested()
-        }
-        function onQuitButtonPressed() {
-            quitRequested()
-        }
+    Component.onCompleted: {
+        navBar.onMediaButtonPressed.connect(mediaNavigationRequested)
+        navBar.onQuitButtonPressed.connect(quitRequested)
     }
 }
