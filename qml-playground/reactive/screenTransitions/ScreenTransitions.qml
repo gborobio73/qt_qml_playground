@@ -1,16 +1,22 @@
 import QtQuick 2.14
 
 Item {
-    property bool homeScreenVisible: true
-    property bool homeScreenEnabled: false
-    property bool mediaScreenVisible: false
-    property bool doorClosedScreenVisible: false
+    property string welcomeScreenState: screenStates.show
+    property string homeScreenState: screenStates.hide
+    property string mediaScreenState: screenStates.hide
+    property string doorClosedScreenState: screenStates.hide
+
+    ScreenStates {
+        id: screenStates
+    }
 
     Connections {
         target: homeScreen
         function onMediaNavigationRequested() {
-            homeScreenVisible = false
-            mediaScreenVisible = true
+            welcomeScreenState = screenStates.hide
+            homeScreenState = screenStates.hide
+            mediaScreenState = screenStates.show
+            doorClosedScreenState = screenStates.hide
         }
 
         function onQuitRequested() {
@@ -21,23 +27,26 @@ Item {
     Connections {
         target: mediaScreen
         function onHomeNavigationRequested() {
-            homeScreenVisible = true
-            mediaScreenVisible = false
+            welcomeScreenState = screenStates.hide
+            homeScreenState = screenStates.show
+            mediaScreenState = screenStates.hide
+            doorClosedScreenState = screenStates.hide
         }
     }
 
     Connections {
-        target: pacio
+        target: externalEvents
         function onDoorOpenned() {
-            homeScreenVisible = true
-            homeScreenEnabled = true
-            mediaScreenVisible = false
-            doorClosedScreenVisible = false
+            welcomeScreenState = screenStates.hide
+            homeScreenState = screenStates.show
+            mediaScreenState = screenStates.hide
+            doorClosedScreenState = screenStates.hide
         }
         function onDoorClosed() {
-            homeScreenVisible = false
-            mediaScreenVisible = false
-            doorClosedScreenVisible = true
+            welcomeScreenState = screenStates.hide
+            homeScreenState = screenStates.hide
+            mediaScreenState = screenStates.hide
+            doorClosedScreenState = screenStates.show
         }
     }
 }

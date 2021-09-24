@@ -1,10 +1,8 @@
 import QtQuick 2.14
 
-FocusScope {
-    visible: screenTransitions.homeScreenVisible
-    focus: screenTransitions.homeScreenVisible
-    enabled: screenTransitions.homeScreenEnabled
-
+Screen {
+    state: screenTransitions.homeScreenState
+    
     signal mediaNavigationRequested()
     signal quitRequested()
 

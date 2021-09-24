@@ -7,6 +7,10 @@ Item {
         id: screenTransitions
     }
 
+    WelcomeScreen {
+        id: welcomeScreen
+    }
+
     HomeScreen {
         id: homeScreen
     }
@@ -20,7 +24,7 @@ Item {
     } 
 
     ExternalEvents {
-        id: pacio
+        id: externalEvents
     }
 
     Component.onCompleted: {
