@@ -1,8 +1,7 @@
 # Screen transitions
 
 Transitions are triggered by either button presses (e.g. go to media screen) or external events (e.g. door is closed).
-`ScreenTransitions.qml` holds the "state" of the screens: what's visible and what is not.
-Screens use this component to show/hide themselves.
+`ScreenTransitions.qml` holds the "state" of the screens. Screens use this component to set their state
 
 `ScreenTransitions.qml` subscribes to all possible events: navigation requests from different screens and external events, and it updates its state (state of the screens).
 
@@ -15,8 +14,10 @@ Screens use this component to show/hide themselves.
     Connections {
         target: homeScreen
         function onMediaNavigationRequested() {
-            homeScreenVisible = false
-            mediaScreenVisible = true
+            welcomeScreenState = screenStates.hide
+            homeScreenState = screenStates.hide
+            mediaScreenState = screenStates.show
+            doorClosedScreenState = screenStates.hide
         }
     }
 ```
