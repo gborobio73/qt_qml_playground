@@ -3,8 +3,6 @@ import QtQuick 2.14
 Screen { 
     state: screenTransitions.mediaScreenState
 
-    signal homeNavigationRequested()
-
     MediaScreenNavigationBar {
         id: navBar
     }
@@ -30,6 +28,6 @@ Screen {
     }
 
     Component.onCompleted: {
-        navBar.onHomeButtonPressed.connect(homeNavigationRequested)
+        navBar.onHomeButtonPressed.connect(navigationSignals.homeNavigationRequested)
     }
 }

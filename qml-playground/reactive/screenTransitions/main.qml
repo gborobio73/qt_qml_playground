@@ -3,6 +3,10 @@ import QtQuick 2.14
 Item {
     width: 400; height: 300
     
+    NavigationSignals {
+        id: navigationSignals
+    }
+
     ScreenTransitions {
         id: screenTransitions
     }

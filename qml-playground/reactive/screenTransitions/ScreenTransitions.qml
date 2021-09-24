@@ -11,7 +11,7 @@ Item {
     }
 
     Connections {
-        target: homeScreen
+        target: navigationSignals
         function onMediaNavigationRequested() {
             welcomeScreenState = screenStates.hide
             homeScreenState = screenStates.hide
@@ -19,18 +19,15 @@ Item {
             doorClosedScreenState = screenStates.hide
         }
 
-        function onQuitRequested() {
-             Qt.callLater(Qt.quit)
-        }
-    }
-
-    Connections {
-        target: mediaScreen
         function onHomeNavigationRequested() {
             welcomeScreenState = screenStates.hide
             homeScreenState = screenStates.show
             mediaScreenState = screenStates.hide
             doorClosedScreenState = screenStates.hide
+        }
+
+        function onQuitRequested() {
+             Qt.callLater(Qt.quit)
         }
     }
 
