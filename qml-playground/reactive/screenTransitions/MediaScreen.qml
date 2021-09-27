@@ -1,7 +1,8 @@
 import QtQuick 2.14
 
 Screen { 
-    state: screenTransitions.mediaScreenState
+    state: screenTransitions.screens.mediaScreenState
+    // state: screenTransitions.mediaScreenState
 
     MediaScreenNavigationBar {
         id: navBar

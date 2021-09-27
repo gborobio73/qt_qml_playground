@@ -1,7 +1,8 @@
 import QtQuick 2.14
 
 Screen { 
-    state: screenTransitions.welcomeScreenState
+    state: screenTransitions.screens.welcomeScreenState
+    // state: screenTransitions.welcomeScreenState
 
     Rectangle {
         x:0; y:0; width: 400; height: 300

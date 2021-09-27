@@ -1,7 +1,8 @@
 import QtQuick 2.14
 
 Screen { 
-    state: screenTransitions.doorClosedScreenState
+    state: screenTransitions.screens.doorClosedScreenState
+    // state: screenTransitions.doorClosedScreenState
 
     Rectangle {
         x:0; y:0; width: 400; height: 300

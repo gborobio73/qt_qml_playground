@@ -1,8 +1,13 @@
 import QtQuick 2.14
 
 Screen {
-    state: screenTransitions.homeScreenState
+    state: screenTransitions.screens.homeScreenState
+    // state: screenTransitions.homeScreenState
     
+    onStateChanged: {
+        console.log(`home screen state change`)
+    }
+
     HomeScreenNavigationBar {
         id: navBar
     }
