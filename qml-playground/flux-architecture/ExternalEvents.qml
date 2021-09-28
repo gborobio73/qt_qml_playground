@@ -2,7 +2,7 @@ import QtQuick 2.14
 
 Item {
 
-    required property CounterActionCreator actionCreator
+    required property ActionCreator actionCreator
 
     Timer { 
         id: timer

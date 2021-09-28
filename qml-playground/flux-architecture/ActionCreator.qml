@@ -18,4 +18,11 @@ Item {
         }
         dispatcher.dispatch(action)
     }
+
+    function click() {
+        var action = {
+            type: 'CLICK',
+        }
+        dispatcher.dispatch(action)
+    }
 }

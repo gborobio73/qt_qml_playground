@@ -7,7 +7,7 @@ Item {
         id: dispatcher
     }
 
-    CounterActionCreator {
+    ActionCreator {
         id: actionCreator
         dispatcher: dispatcher
     }
@@ -21,9 +21,15 @@ Item {
         id: counterStore
         dispatcher: dispatcher
     }
+
+    ClickCountStore {
+        id: clickCountStore
+        dispatcher: dispatcher
+    }
     
-    CounterView {
+    View {
         actionCreator: actionCreator
-        store: counterStore
+        counterStore: counterStore
+        clickCountStore: clickCountStore
     }
 }
